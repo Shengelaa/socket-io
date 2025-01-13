@@ -1,8 +1,10 @@
 .container {
-  width: 400px;
+  margin: 0 auto;
+  max-width: 600px;
   height: 500px;
   overflow-y: auto;
-  border: 2px solid black;
+  border: 2px solid #e5e5e5;
+  background-color: #e5e5e5;
   padding: 10px;
   border-radius: 10px;
   display: flex;
@@ -11,18 +13,74 @@
 }
 
 .chat {
-  background-color: rgb(196, 216, 196);
-  width: 200px;
+  background-color: white;
+  display: inline-block;
+  max-width: 100%;
+  min-width: 100px;
   border-radius: 10px;
   padding: 6px;
+  color: black;
+  align-self: flex-start;
+  word-wrap: break-word;
 }
 
 .flex {
   display: flex;
   gap: 5px;
+  justify-content: flex-end;
 }
 
 .moveLeft {
-  align-self: end;
-  background-color: rgb(108, 108, 213);
+  background-color: #409fff;
+  color: white;
+  align-self: flex-end;
+}
+
+.flex1 {
+  justify-content: flex-start;
+}
+
+h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+h5 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.Sender {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  justify-content: space-between;
+  z-index: 2;
+  margin-top: -50px;
+}
+
+.inputStyle {
+  width: 300px;
+  height: 40px;
+  border: 2px solid rgb(160, 160, 160);
+  border-radius: 12px;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.buttonStyle {
+  width: 100px;
+  height: 40px;
+  border: 2px solid #cdcdcd;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color 0.5s ease;
+  background-color: #f0f0f0;
+}
+
+.buttonStyle:hover {
+  background-color: #409fff;
+  cursor: pointer;
+  border: 2px solid #409fff;
 }

@@ -36,37 +36,40 @@ function App() {
       setRecievedData((prev) => [...prev, data]);
     });
 
-    // Cleanup function to remove the listener
     return () => {
       socket.off("sendMessage");
     };
-  }, []); // Correct dependency array
+  }, []);
 
   return (
     <div>
-      <h1>Hello world</h1>
+      <h1>CHAT MADE BY LEVANI</h1>
       {showChat ? (
         <div>
-          <input
-            type='text'
-            placeholder='text'
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button onClick={sendMessage}>send data</button>
           <div className='container'>
             {recievedData.map((el) => (
               <div
-                className={`chat ${userName === el.author ? "moveLeft" : ""}`} // Fixed className logic
-                key={el.time} // Assuming time is unique
-              >
-                <h2>{el.message}</h2>
-                <div className='flex'>
-                  <h5>{el.author}</h5>
-                  <h5>{el.time}</h5>
+                className={`chat ${userName === el.author ? "moveLeft" : ""}`}
+                key={el.time}>
+                <div
+                  className={`flex ${userName !== el.author ? "flex1" : ""}`}>
+                  {userName !== el.author && <h3>{el.author} :</h3>}
                 </div>
+                <h5>{el.message}</h5>
               </div>
             ))}
+          </div>
+          <div className='Sender'>
+            <input
+              className='inputStyle'
+              type='text'
+              placeholder='Type Text.'
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button className='buttonStyle' onClick={sendMessage}>
+              Send Message
+            </button>
           </div>
         </div>
       ) : (

@@ -1,0 +1,28 @@
+.container {
+  width: 400px;
+  height: 500px;
+  overflow-y: auto;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat {
+  background-color: rgb(196, 216, 196);
+  width: 200px;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.flex {
+  display: flex;
+  gap: 5px;
+}
+
+.moveLeft {
+  align-self: end;
+  background-color: rgb(108, 108, 213);
+}
